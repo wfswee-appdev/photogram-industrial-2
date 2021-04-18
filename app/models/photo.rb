@@ -26,4 +26,7 @@ class Photo < ApplicationRecord
   has_many :likes
   has_many :fans, through: :likes # can leave out source: fan since it's conventional
 
+  validates :caption, presence: true
+  validates :image, presence: true
+
 end
