@@ -1,5 +1,5 @@
 class AddIndexToComments < ActiveRecord::Migration[6.1]
   def change
-    add_index :comments, :photo
+    add_index :comments, :photos
   end
 end
