@@ -24,4 +24,6 @@ class Photo < ApplicationRecord
 
   has_many :comments
   has_many :likes
+  has_many :fans, through: :likes # can leave out source: fan since it's conventional
+
 end
