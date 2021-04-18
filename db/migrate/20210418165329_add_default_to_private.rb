@@ -1,6 +1,6 @@
 class AddDefaultToPrivate < ActiveRecord::Migration[6.1]
   def change
-    chage_column_default(
+    change_column_default(
       :users,
       :private,
       :true
