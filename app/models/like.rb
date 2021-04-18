@@ -9,6 +9,6 @@
 #  updated_at :datetime         not null
 #
 class Like < ApplicationRecord
-  belongs_to :fans, class_name: "User"
+  belongs_to :fans, class_name: "User", counter_cache: true
   belongs_to :photo
 end
