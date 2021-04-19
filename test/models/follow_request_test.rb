@@ -11,8 +11,9 @@
 #
 # Indexes
 #
-#  index_follow_requests_on_recipient_id  (recipient_id)
-#  index_follow_requests_on_sender_id     (sender_id)
+#  index_follow_requests_on_recipient_id                (recipient_id)
+#  index_follow_requests_on_recipient_id_and_sender_id  (recipient_id,sender_id) UNIQUE
+#  index_follow_requests_on_sender_id                   (sender_id)
 #
 # Foreign Keys
 #
