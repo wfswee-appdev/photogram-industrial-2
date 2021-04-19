@@ -25,6 +25,8 @@ task sample_data: :environment do
     fr.sender_id = User.all.ids.sample
     fr.save
     p "#{u.username}"
-end
+  end
 
-p "#{FollowRequest.count} follow requests have been created."
+  p "#{FollowRequest.count} follow requests have been created."
+  
+end
