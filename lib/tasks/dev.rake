@@ -4,8 +4,8 @@ task sample_data: :environment do
   
   FollowRequest.destroy_all
   Like.destroy_all
+  Comment.destroy_all
   Photo.destroy_all
-  # Comment.destroy_all
   User.destroy_all
 
   12.times do
@@ -38,10 +38,10 @@ task sample_data: :environment do
     p.caption = Faker::Movies::LordOfTheRings.location
     p.owner_id = User.all.ids.sample
     p.save
-    # p "#{p.fan_id} #{p.photo_id}"
+    p "#{p.image} #{p.id}"
   end
 
-  p "#{Photo.count} likes have been created."
+  p "#{Photo.count} photos have been created."
 
   12.times do
     l = Like.new
@@ -49,10 +49,24 @@ task sample_data: :environment do
     l.photo_id = Photo.all.ids.sample
     p l
     l.save
-   # p "#{l.fan_id} #{l.photo_id}"
+   p "#{l.fan_id} #{l.photo_id}"
    p l.errors.full_messages
   end
 
   p "#{Like.count} likes have been created."
+
+  12.times do
+    c = Comment.new
+    c.author_id = User.all.ids.sample
+    c.photo_id = Photo.all.ids.sample
+    c.body = Faker::Movies::LordOfTheRings.location
+    p c
+    c.save
+   p "#{c.author_id} #{c.photo_id}"
+   p c.errors.full_messages
+  end
+
+  p "#{Comment.count} comments have been created."
+
 
 end
