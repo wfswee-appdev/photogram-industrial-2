@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   resources :photos
 
   get ":username/liked" => "photos#liked", as: :liked_photos
- # get ":username/feed" => "photos#liked", as: :liked_photos
- # get ":username/followers" => "photos#liked", as: :liked_photos
+  get ":username/feed" => "users#feed", as: :feed
+  get ":username/followers" => "users#followers", as: :followers
   #get ":username/following" => "photos#liked", as: :liked_photos
 #for followers and following: list group basic with links to the other users show pages. hint: render partials in a loop
 
