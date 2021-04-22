@@ -1,8 +1,8 @@
 <%= render "users/tabs" %>
 
-<%= current_user.followers.count %>
+<%= current_user.leaders.count %>
 
-<% current_user.followers.each do |zebra| %>
+<% current_user.leaders.each do |zebra| %>
 
 <%= render "/users/community", giraffe: zebra %>
 

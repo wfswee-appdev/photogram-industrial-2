@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get ":username/liked" => "photos#liked", as: :liked_photos
   get ":username/feed" => "users#feed", as: :feed
   get ":username/followers" => "users#followers", as: :followers
-  #get ":username/following" => "photos#liked", as: :liked_photos
+  get ":username/leaders" => "users#leaders", as: :leaders
 #for followers and following: list group basic with links to the other users show pages. hint: render partials in a loop
 
   # initial route before replacing with the route below it
