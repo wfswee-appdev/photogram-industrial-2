@@ -11,8 +11,9 @@
 #
 # Indexes
 #
-#  index_follow_requests_on_recipient_id  (recipient_id)
-#  index_follow_requests_on_sender_id     (sender_id)
+#  index_follow_requests_on_recipient_id                (recipient_id)
+#  index_follow_requests_on_recipient_id_and_sender_id  (recipient_id,sender_id) UNIQUE
+#  index_follow_requests_on_sender_id                   (sender_id)
 #
 # Foreign Keys
 #
@@ -22,5 +23,11 @@
 class FollowRequest < ApplicationRecord
   belongs_to :recipient, class_name: "User"
   belongs_to :sender, class_name: "User"
+
+  enum status: { pending: "pending", rejected: "rejected", accepted: "accepted" }
+  # defines positive and negative scopes
+  # scope :accepted, -> { where(status: "accepted") }
+  # scope :not_accepted, -> { where.not(status: "accepted") }
   
+  validates :recipient, uniqueness: { scope: :sender }
 end
