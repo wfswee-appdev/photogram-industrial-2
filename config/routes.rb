@@ -10,11 +10,16 @@ Rails.application.routes.draw do
   resources :likes
   resources :photos
 
+  get ":username/liked" => "photos#liked", as: :liked_photos
+ # get ":username/feed" => "photos#liked", as: :liked_photos
+ # get ":username/followers" => "photos#liked", as: :liked_photos
+  #get ":username/following" => "photos#liked", as: :liked_photos
+#for followers and following: list group basic with links to the other users show pages. hint: render partials in a loop
+
   # initial route before replacing with the route below it
   # resources :users, only: :show
-  
   # must be the last route because it is the most general
-  get "/:username" => "users#show"
+  get ":username" => "users#show", as: :user
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
