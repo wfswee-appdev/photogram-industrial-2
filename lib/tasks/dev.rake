@@ -32,6 +32,9 @@ task sample_data: :environment do
     u.email = "#{u.username}@email.com"
     u.password = "password"
     private = [true, false].sample
+    u.avatar = "https://robohash.org/#{rand(9999)}"
+      )
+
     u.save
     p "#{u.username}"
   end
