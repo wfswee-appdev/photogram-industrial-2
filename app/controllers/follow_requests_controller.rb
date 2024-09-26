@@ -19,6 +19,7 @@ class FollowRequestsController < ApplicationController
   def edit
   end
 
+
   # POST /follow_requests or /follow_requests.json
   def create
     @follow_request = FollowRequest.new(follow_request_params)
