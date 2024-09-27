@@ -6,27 +6,26 @@
     </h1>
 
 
-    <ul class="nav nav-pills nav-justified">
-      <li class="nav-link">
-        <%= link_to "Posts", user_path(@user.username), class: "nav-item" %>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+            <%= link_to "Posts", user_path(@user.username), class: "nav-link active" %>
+      </li>
+      <li class="nav-item">
+            <%= link_to "Liked photos", liked_photos_path(@user.username), class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+            <%= link_to "Feed", feed_path(@user.username), class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+            <%= link_to "Followers", followers_path(@user.username), class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+            <%= link_to "Following", leaders_path(@user.username), class: "nav-link" %>
       </li>
 
-      <li class="nav-link">
-        <%= link_to "Liked photos", liked_photos_path(@user.username), class: "nav-item" %>
-      </li>
-
-      <li class="nav-link">
-        <%= link_to "Feed", feed_path(@user.username), class: "nav-item" %>
-      </li>
-
-      <li class="nav-link">
-        <%= link_to "Followers", followers_path(@user.username), class: "nav-item" %>
-      </li>
-
-      <li class="nav-link">
-        <%= link_to "Following", leaders_path(@user.username), class: "nav-item" %>
-      </li>
     </ul>
+
+
 
   </div>
 </div>
